@@ -1,9 +1,11 @@
-import { createStore, applyMiddleware,  } from "redux"
+import { createStore, applyMiddleware, combineReducers,  } from "redux"
 import thunk from "redux-thunk"
-import { filmsReducer } from "./reducer/films-reducer"
+import { filmsReducer } from "./reducer/films-header-reducer"
 
-type RootReducerType = typeof filmsReducer // не особо понял, поискать!!!
-export type AppStateType = ReturnType<RootReducerType>
+
+
+type RootReducerType = typeof filmsReducer 
+export type AppStateType = ReturnType<RootReducerType> // не особо понял, поискать!!!
 
 const store = createStore(filmsReducer, applyMiddleware(thunk))
 

@@ -1,9 +1,11 @@
 export enum FilmsActionTypes {
-    SET_USER_INPUT = "SET_USER_INPUT"
+    SET_USER_INPUT = "SET_USER_INPUT",
+    SET_START_FILMS = "SET_START_FILMS"
 }
 
 export interface InitialFilmsStateType {
     userInput : string;
+    startFilms : []
 }
 
 export interface SetUserInputType {
@@ -11,4 +13,9 @@ export interface SetUserInputType {
     userInput : string
 }
 
-export type ActionsType = SetUserInputType
+export interface SetStartFilms {
+    type : FilmsActionTypes.SET_START_FILMS,
+    startFilms : []
+}
+
+export type ActionsType = SetUserInputType | SetStartFilms
