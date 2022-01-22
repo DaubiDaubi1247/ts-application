@@ -1,0 +1,12 @@
+$headerBackgroundImg: "../../common/png/bg.png";
+$headerBackgroundClr: #fff;
+.header__wrapper {
+    background-image: url($headerBackgroundImg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    height: 150px;
+    justify-content: space-between;
+    padding: 0 10px 0 10px;
+    color: $headerBackgroundClr;
+}

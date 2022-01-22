@@ -1,0 +1,26 @@
+$inputBackground: #E8E8E8;
+.header-input {
+    margin-left: auto;
+    margin-right: 30px;
+    &__form {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__input {
+        border-radius: 6px 0 0 6px;
+        padding: 5px 10px 5px 10px;
+        border: none;
+        background-color: $inputBackground;
+        max-width: 170px;
+        width: 100%;
+        &:focus-visible {
+            outline: none;
+        }
+    }
+    &__search-button {
+        border-radius: 0 6px 6px 0;
+        background-color: $inputBackground;
+        border: none !important;
+        cursor: pointer;
+    }
+}

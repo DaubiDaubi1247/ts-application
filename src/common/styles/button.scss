@@ -1,0 +1,51 @@
+.button {
+    color: #fff;
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5), 7px 7px 20px 0px rgba(0, 0, 0, .1), 4px 4px 5px 0px rgba(0, 0, 0, .1);
+    outline: none;
+}
+
+.upgrade-button {
+    line-height: 42px;
+    padding: 0 10px;
+    border: none;
+    background: black;
+}
+
+.upgrade-button:hover {
+    color: black;
+    background: transparent;
+    box-shadow: none;
+}
+
+.upgrade-button:before,
+.upgrade-button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: black;
+    box-shadow: -1px -1px 5px 0px #fff, 7px 7px 20px 0px #0003, 4px 4px 5px 0px #0002;
+    transition: 400ms ease all;
+}
+
+.upgrade-button:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+}
+
+.upgrade-button:hover:before,
+.upgrade-button:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
+}
