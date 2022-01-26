@@ -2,6 +2,7 @@ import React from 'react';
 import { GetStartFilmsItemType } from '../../../api/api-types';
 import { NavLink } from 'react-router-dom';
 import "./film-card.scss"
+import ImgWithPreloader from '../../../common/imgWithPreloader';
 
 const FilmCard: React.FC<GetStartFilmsItemType> = (props) => {
 
@@ -13,7 +14,7 @@ const FilmCard: React.FC<GetStartFilmsItemType> = (props) => {
             <div className="film-card__grid-wrapper">
                 <div className="film-card__img">
                     <NavLink to={"films/" + props.id}>
-                        <img src={props.image} alt="" />
+                        <ImgWithPreloader URL={props.image}/>
                     </NavLink>
                 </div>
                 <div className="film-card__description">

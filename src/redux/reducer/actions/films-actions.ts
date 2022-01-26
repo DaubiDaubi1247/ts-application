@@ -1,4 +1,5 @@
-import { SetUserFilms } from './../types/fims-types';
+import { SetActorInfo } from './../types/fims-types';
+import { GetActorInfoResponseType, GetFullDescriptionResponseType } from './../../../api/api-types';
 import { GetStartFilmsItemType } from "../../../api/api-types"
 import * as FilmsTypes from "../types/fims-types"
 
@@ -17,9 +18,23 @@ export const setStartFilms = (startFilms : Array<GetStartFilmsItemType>) : Films
     }
 }
 
-export const setUserFilms = (userFilms : Array<GetStartFilmsItemType>) : SetUserFilms => {
+export const setUserFilms = (userFilms : Array<GetStartFilmsItemType>) : FilmsTypes.SetUserFilms => {
     return {
         type: FilmsTypes.FilmsActionTypes.SET_USER_FILMS,
         userFilms
+    }
+}
+
+export const setFullDescription = (fullDescr : GetFullDescriptionResponseType) : FilmsTypes.SetFullDescription => {
+    return {
+        type: FilmsTypes.FilmsActionTypes.SET_FULL_DESCRIPTION,
+        fullDescr
+    }
+}
+
+export const setActorInfo = (actorInfo : GetActorInfoResponseType) : SetActorInfo => {
+    return {
+        type: FilmsTypes.FilmsActionTypes.SET_ACTOR_INFO,
+        actorInfo
     }
 }

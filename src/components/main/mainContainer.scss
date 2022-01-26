@@ -1,5 +1,7 @@
 .films {
-    display: grid;
+    &__start-films {
+        display: grid;
+    }
     &__getMore-button {
         align-self: center;
         margin: 15px auto;

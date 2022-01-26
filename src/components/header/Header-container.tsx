@@ -6,7 +6,6 @@ import "./header-container.scss"
 import HeaderUser from "./header-user/HeaderUser"
 import HeaderTitle from "./headerTitle/HeaderTitle"
 import HeaderInput from "./header-input/HeaderInput"
-import { InitialFilmsStateType } from "../../redux/reducer/types/fims-types"
 
 const HeaderContainer : React.FC<HeaderContainerProps> = (props) => {
     return (
@@ -19,9 +18,7 @@ const HeaderContainer : React.FC<HeaderContainerProps> = (props) => {
 }
 
 
-const mapStateToProps = (state : InitialFilmsStateType) => {
-    
-}
+
 
 
 export default connect<null,mapDispatchToPropsType>(null, {

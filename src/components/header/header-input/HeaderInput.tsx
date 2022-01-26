@@ -3,15 +3,20 @@ import { SetUserInputType } from "../../../redux/reducer/types/fims-types";
 import "./header-input.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { getUserFilms } from "../../../redux/reducer/films-header-reducer";
+import { useDispatch } from "react-redux";
 
 export interface HeaderInputProps {
     setUserInput: (text: string) => SetUserInputType
 }
 
 const HeaderInput: React.FC<HeaderInputProps> = (props) => {
-    const [userInput, setUserInput] = useState("");
+    const [userInput, setUserInput] = useState<string>("");
+    const dispatch = useDispatch()
     const submitUserInput = (): void => {
+        dispatch(getUserFilms(userInput))
         props.setUserInput(userInput);
+        setUserInput("");
     }
 
     return (
