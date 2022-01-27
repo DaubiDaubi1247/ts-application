@@ -14,7 +14,9 @@ const FullDescription: React.FC<GetFullDescriptionPropsT> = (props) => {
         return <Preloader/>
     }
 
-    const getActorLinkArr : VisibleCardsType = props.data.starList.map(el => <NavLink to={`/actor/${el.id}`}>{el.name}</NavLink>)
+    const getActorLinkArr : VisibleCardsType = props.data.starList.map(el => <div className="link__actors-or-films">
+        <NavLink className="" to={`/actor/${el.id}`}>{el.name}</NavLink>
+    </div>)
 
     return (
         <div className="full-description__wrapper">
@@ -38,11 +40,12 @@ const FullDescription: React.FC<GetFullDescriptionPropsT> = (props) => {
                         <span className="full-description__item">Рейтинг на MetaCritic</span> : {props.data.metacriticRating}
                     </span>
                     <span className="full-description__descr description-title">
-                       <span className="full-description__item">Описание</span> : {props.data.plot}
+                       <span className="full-description__item">Описание</span> : {props.data.plotLocal?.length ? props.data.plotLocal:props.data.plot}
                     </span>
-                </div>
-                <div className="full-description__actors">
+                <div className="full-description__navLinks full-description__item">
+                    <span >Актеры которые снимались в {props.data.fullTitle} : </span>
                     {getActorLinkArr}
+                </div>
                 </div>
             </div>
         </div>

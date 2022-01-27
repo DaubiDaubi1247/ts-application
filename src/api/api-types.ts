@@ -7,6 +7,7 @@ export interface GetStartFilmsItemType {
     image: string,
     crew?: string,
     imDbRating?: number,
+
 }
 
 export interface GetStartFilmsResponseType {
@@ -30,6 +31,7 @@ export interface GetFullDescriptionResponseType {
     image: string
     releaseDate: number
     plot: string
+    plotLocal?: string
     awards: string,
     directorList: ArrayList
     writersList:ArrayList
@@ -55,5 +57,5 @@ export interface GetActorInfoResponseType {
     summary : string
     birthDate : string
     awards : string
-    knowFor : Array<knowForType>
+    knownFor : Array<knowForType>
 }

@@ -2,7 +2,7 @@ import { GetActorInfoResponseType, GetFullDescriptionResponseType, GetStartFilms
 import axios from "axios";
 
 const baseData = axios.create({
-    baseURL: "https://imdb-api.com/en/API/",
+    baseURL: "https://imdb-api.com/ru/API/",
 })
 
 export const filmsAPI = {

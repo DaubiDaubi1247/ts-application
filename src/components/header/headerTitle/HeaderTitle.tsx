@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 interface HeaderTitleProps {
     title: string;
@@ -6,7 +7,7 @@ interface HeaderTitleProps {
 const HeaderTitle : React.FC<HeaderTitleProps>  = (props) => {
     return (
         <div>
-            <span>{props.title}</span>
+            <NavLink to='/'>{props.title}</NavLink>
         </div>
     );
 }

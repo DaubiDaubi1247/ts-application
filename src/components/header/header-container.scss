@@ -1,5 +1,5 @@
 $headerBackgroundImg: "../../common/png/bg.png";
-$headerBackgroundClr: #fff;
+$headerColor: #fff;
 .header__wrapper {
     background-image: url($headerBackgroundImg);
     background-size: cover;
@@ -8,5 +8,7 @@ $headerBackgroundClr: #fff;
     height: 150px;
     justify-content: space-between;
     padding: 0 10px 0 10px;
-    color: $headerBackgroundClr;
+    a {
+        color: $headerColor;
+    }
 }
