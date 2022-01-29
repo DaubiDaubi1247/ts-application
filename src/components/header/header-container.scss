@@ -1,14 +1,36 @@
 $headerBackgroundImg: "../../common/png/bg.png";
 $headerColor: #fff;
-.header__wrapper {
+.header {
     background-image: url($headerBackgroundImg);
     background-size: cover;
-    display: flex;
-    align-items: center;
     height: 150px;
-    justify-content: space-between;
     padding: 0 10px 0 10px;
-    a {
-        color: $headerColor;
+    &__wrapper {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        background-position: center center;
+        justify-content: space-between;
+        a {
+            color: $headerColor;
+        }
+    }
+}
+
+@media screen and (min-width: 1030px) {
+    .header {
+        height: 200px;
+    }
+}
+
+@media screen and (min-width:1320px) {
+    .header {
+        height: 250px;
+    }
+}
+
+@media screen and (min-width:1680px) {
+    .header {
+        height: 300px;
     }
 }

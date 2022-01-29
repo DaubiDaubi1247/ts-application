@@ -4,15 +4,18 @@ $inputBackground: #E8E8E8;
     margin-right: 30px;
     &__form {
         display: flex;
-        justify-content: space-between;
+        width: 300px;
+        justify-content: center;
     }
     &__input {
         border-radius: 6px 0 0 6px;
         padding: 5px 10px 5px 10px;
         border: none;
         background-color: $inputBackground;
-        max-width: 170px;
-        width: 100%;
+        max-width: 200px;
+        flex: 1 0 95%;
+        align-self: flex-start;
+        height: 25px;
         &:focus-visible {
             outline: none;
         }
@@ -22,5 +25,6 @@ $inputBackground: #E8E8E8;
         background-color: $inputBackground;
         border: none !important;
         cursor: pointer;
+        flex: 0 1 5%
     }
 }

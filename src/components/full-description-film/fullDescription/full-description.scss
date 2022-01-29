@@ -1,4 +1,8 @@
+$GreyBackgroundColor: #2a2a2a;
 .full-description {
+    padding-top: 5px;
+    padding-left: 5px;
+    background-color: $GreyBackgroundColor;
     &__data {
         display: flex;
         align-items: center;
@@ -21,7 +25,7 @@
     }
     &__navLinks {
         span {
-            margin-bottom: 10px;
+            margin: 10px 0;
             display: block;
         }
         div {
@@ -32,7 +36,7 @@
 
 .link__actors-or-films {
     a {
-        color: #34495e;
+        color: #fff;
         line-height: 1.2;
         position: relative;
         padding: 0 14px;
@@ -42,7 +46,7 @@
         content: "";
         height: 100%;
         min-width: 4px;
-        background: #34495e;
+        background: #fff;
         position: absolute;
         left: 0;
         bottom: 0;
@@ -50,7 +54,7 @@
     }
     a:hover:after {
         min-width: 100%;
-        background: #95a5a6;
+        background: #fff;
         opacity: 0.35;
     }
 }

@@ -9,10 +9,12 @@ import HeaderInput from "./header-input/HeaderInput"
 
 const HeaderContainer : React.FC<HeaderContainerProps> = (props) => {
     return (
-        <div className="header__wrapper">
-            <HeaderTitle title={"Название"}/>
-            <HeaderInput setUserInput={props.setUserInput}/>
-            <HeaderUser userName="userName"/>
+        <div className="header">
+            <div className="header__wrapper">
+                <HeaderTitle title={"Название"}/>
+                <HeaderInput setUserInput={props.setUserInput}/>
+                <HeaderUser userName="userName"/>
+            </div>
         </div>
     )
 }

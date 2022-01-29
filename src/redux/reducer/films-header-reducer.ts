@@ -29,7 +29,7 @@ export const filmsReducer = (state : FilmsTypes.InitialFilmsStateType = initialS
         case FilmsTypes.FilmsActionTypes.SET_USER_FILMS : 
             return {
                 ...state,
-                userFilms: {...action.userFilms}
+                userFilms: [...action.userFilms]
             }
         case FilmsTypes.FilmsActionTypes.SET_FULL_DESCRIPTION:
             return {

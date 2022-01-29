@@ -17,7 +17,7 @@ const FullDescriptionFilmContainer: React.FC = () => {
 
      
     return (
-        <div>
+        <div className="full-description">
             <FullDescription data={filmInfo}/>
         </div>
     );

@@ -18,6 +18,7 @@ const FullDescription: React.FC<GetFullDescriptionPropsT> = (props) => {
         <NavLink className="" to={`/actor/${el.id}`}>{el.name}</NavLink>
     </div>)
 
+    const date = new Date(props.data.releaseDate);
     return (
         <div className="full-description__wrapper">
             <div className="full-description__name">
@@ -31,7 +32,7 @@ const FullDescription: React.FC<GetFullDescriptionPropsT> = (props) => {
                 </div>
                 <div className="full-description__text-description">
                     <span className="description-title">
-                        <span className="full-description__item">Дата Релиза</span> : {props.data.releaseDate}
+                        <span className="full-description__item">Дата Релиза</span> : {date.toLocaleDateString()}
                     </span>
                     <span className="full-description__imdbRating description-title">
                         <span className="full-description__item">Рейтинг на IMDB</span> : {props.data.imDbRating}

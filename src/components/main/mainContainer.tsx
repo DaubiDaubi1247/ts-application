@@ -7,7 +7,6 @@ import { getStartFilms } from "../../redux/reducer/films-header-reducer";
 import { AppStateType } from "../../redux/store";
 import FilmCard from "./filmCard/filmCard";
 import "./mainContainer.scss"
-import UserFilms from "./userFilms/userFilms";
 
 const COUNT_CARDS = 4;
 
@@ -16,7 +15,6 @@ export type VisibleCardsType = Array<React.ReactElement>;
 const MainContainer: React.FC = () => {
 
     const startFilms: Array<GetStartFilmsItemType> = useSelector((state: AppStateType) => state.films.startFilms);
-    const userFilms: Array<GetStartFilmsItemType> = useSelector((state: AppStateType) => state.films.userFilms)
     const isLoading: boolean = useSelector((state: AppStateType) => state.commonReducer.isLoading);
 
     const [visibleCards, setVisibleCards] = useState<VisibleCardsType>([]);
@@ -38,19 +36,17 @@ const MainContainer: React.FC = () => {
         }
         return tempArrForVisibleCards
     };
-
     return (
         <main className="films">
             {isLoading ? <Preloader /> :
                 <div className="films__wrapper">
-                    {userFilms.length ? <UserFilms userFilms={userFilms}/> :
+
                         <div className="films__start-films">
                             {visibleCards}
                             <button className="films__getMore-button button upgrade-button" onClick={() => setVisibleCards([...visibleCards, ...getMoreFilms(startFilms, visibleCards.length)])}>
                                 Посмотреть дальше
                             </button>
                         </div>
-                    }
                 </div>
             }
         </main>

@@ -8,12 +8,12 @@ const FilmCard: React.FC<GetStartFilmsItemType> = (props) => {
 
     return (
         <div className="film-card">
-            <NavLink to={"films/" + props.id} className="link">
+            <NavLink to={"/films/" + props.id} className="link">
                 <span className="film-card__film-title">{props.fullTitle || props.title}</span>
             </NavLink>
             <div className="film-card__grid-wrapper">
                 <div className="film-card__img">
-                    <NavLink to={"films/" + props.id}>
+                    <NavLink to={"/films/" + props.id}>
                         <ImgWithPreloader URL={props.image}/>
                     </NavLink>
                 </div>
