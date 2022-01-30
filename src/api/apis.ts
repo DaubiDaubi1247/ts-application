@@ -1,4 +1,4 @@
-import { GetActorInfoResponseType, GetFullDescriptionResponseType, GetStartFilmsResponseType, GetUserFilmsResponseType } from './api-types';
+import { GetActorInfoResponseType, GetFullDescriptionResponseType, GetStartFilmsResponseType, GetTrailerUrl, GetUserFilmsResponseType } from './api-types';
 import axios from "axios";
 
 const baseData = axios.create({
@@ -18,5 +18,8 @@ export const filmsAPI = {
     },
     getActorInfo (id: string | undefined) {
         return baseData.get<GetActorInfoResponseType>(`Name/k_hflr49q2/${id}`).then(res => res.data);
+    },
+    getTrailerURL (id: string | undefined) {
+        return baseData.get<GetTrailerUrl>(`YouTubeTrailer/k_hflr49q2/${id}`).then(res => res.data)
     }
 }

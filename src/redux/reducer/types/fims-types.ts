@@ -7,6 +7,7 @@ export enum FilmsActionTypes {
     SET_USER_FILMS = "SET_USER_FILMS",
     SET_FULL_DESCRIPTION = "SET_FULL_DESCRIPTION",
     SET_ACTOR_INFO = "SET_ACTOR_INFO",
+    SET_TRAILER_URL = "SET_TRAILER_URL",
 }
 
 export interface InitialFilmsStateType {
@@ -14,7 +15,8 @@ export interface InitialFilmsStateType {
     startFilms : Array<GetStartFilmsItemType>;
     userFilms: Array<GetStartFilmsItemType>
     fullDescr : GetFullDescriptionResponseType | null
-    actorInfo : GetActorInfoResponseType | null
+    actorInfo : GetActorInfoResponseType | null,
+    trailerURL : string
 }
 
 export interface SetUserInputType {
@@ -42,4 +44,9 @@ export interface SetActorInfo {
     actorInfo : GetActorInfoResponseType
 }
 
-export type ActionsType = SetUserInputType | SetStartFilms | SetUserFilms | SetFullDescription | SetActorInfo
+export interface SetTrailerURL {
+    type: FilmsActionTypes.SET_TRAILER_URL,
+    trailerURL : string
+}
+
+export type ActionsType = SetUserInputType | SetStartFilms | SetUserFilms | SetFullDescription | SetActorInfo | SetTrailerURL

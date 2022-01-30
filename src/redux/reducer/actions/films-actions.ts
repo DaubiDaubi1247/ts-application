@@ -1,4 +1,4 @@
-import { SetActorInfo } from './../types/fims-types';
+import { SetActorInfo, SetTrailerURL } from './../types/fims-types';
 import { GetActorInfoResponseType, GetFullDescriptionResponseType } from './../../../api/api-types';
 import { GetStartFilmsItemType } from "../../../api/api-types"
 import * as FilmsTypes from "../types/fims-types"
@@ -36,5 +36,12 @@ export const setActorInfo = (actorInfo : GetActorInfoResponseType) : SetActorInf
     return {
         type: FilmsTypes.FilmsActionTypes.SET_ACTOR_INFO,
         actorInfo
+    }
+}
+
+export const setTrailerUrl = (trailerURL: string) : SetTrailerURL => {
+    return {
+        type : FilmsTypes.FilmsActionTypes.SET_TRAILER_URL,
+        trailerURL
     }
 }

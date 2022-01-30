@@ -3,7 +3,7 @@ import { ThunkAction } from "redux-thunk"
 import { filmsAPI } from "../../api/apis"
 import { AppStateType } from "../store"
 import { setLoading } from "./actions/common-actions"
-import { setActorInfo, setFullDescription, setStartFilms, setUserFilms } from "./actions/films-actions"
+import { setActorInfo, setFullDescription, setStartFilms, setTrailerUrl, setUserFilms } from "./actions/films-actions"
 import * as FilmsTypes from"./types/fims-types"
 
 const initialState : FilmsTypes.InitialFilmsStateType = {
@@ -11,7 +11,8 @@ const initialState : FilmsTypes.InitialFilmsStateType = {
     startFilms: [],
     userFilms: [],
     fullDescr : null,
-    actorInfo : null
+    actorInfo : null,
+    trailerURL : "",
 }
 
 export const filmsReducer = (state : FilmsTypes.InitialFilmsStateType = initialState,action : FilmsTypes.ActionsType) : FilmsTypes.InitialFilmsStateType => {
@@ -41,11 +42,16 @@ export const filmsReducer = (state : FilmsTypes.InitialFilmsStateType = initialS
                 ...state,
                 actorInfo : {...action.actorInfo}
             }
+        case FilmsTypes.FilmsActionTypes.SET_TRAILER_URL :
+            return {
+                ...state,
+                trailerURL : action.trailerURL
+            }
         default: return state
     }
 }
 
-type ThunkType = ThunkAction<void,AppStateType,unknown,FilmsTypes.ActionsType | setLoadingActionType>
+export type ThunkType = ThunkAction<void,AppStateType,unknown,FilmsTypes.ActionsType | setLoadingActionType>
 
 export const getStartFilms = () : ThunkType => async (dispatch) => {
     const response = await filmsAPI.getStartFilms();
@@ -66,4 +72,10 @@ export const getFullDescription = (id: string | undefined): ThunkType => async (
 export const getActorInfo = (id: string | undefined) : ThunkType => async (dispatch) => {
     const response = await filmsAPI.getActorInfo(id);
     dispatch(setActorInfo(response))
+}
+
+export const getTrailerURL = (id: string | undefined) : ThunkType => async (dispatch) => {
+    const response = await filmsAPI.getTrailerURL(id);
+    debugger
+    dispatch(setTrailerUrl(response.videoUrl))
 }

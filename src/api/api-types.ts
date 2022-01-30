@@ -10,6 +10,10 @@ export interface GetStartFilmsItemType {
 
 }
 
+export interface GetTrailerUrl {
+    videoUrl : string
+}
+
 export interface GetStartFilmsResponseType {
     items: Array<GetStartFilmsItemType>
 }
