@@ -39,9 +39,9 @@ export const setActorInfo = (actorInfo : GetActorInfoResponseType) : SetActorInf
     }
 }
 
-export const setTrailerUrl = (trailerURL: string) : SetTrailerURL => {
+export const setTrailerUrl = (videoIdForYoutube: string) : SetTrailerURL => {
     return {
         type : FilmsTypes.FilmsActionTypes.SET_TRAILER_URL,
-        trailerURL
+        videoIdForYoutube
     }
 }

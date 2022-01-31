@@ -8,7 +8,7 @@ import FullDescription from "./fullDescription/filmDescription";
 
 const FullDescriptionFilmContainer: React.FC = () => {
     const filmInfo : GetFullDescriptionResponseType | null = useSelector((state: AppStateType) => state.films.fullDescr)
-    const URL : string = useSelector((state: AppStateType) => state.films.trailerURL)
+    const videoIdForYoutube : string = useSelector((state: AppStateType) => state.films.videoIdForYoutube)
     const dispatch = useDispatch()
     const {id} = useParams<string>();
     
@@ -19,7 +19,7 @@ const FullDescriptionFilmContainer: React.FC = () => {
      
     return (
         <div className="full-description">
-            <FullDescription dispatch={dispatch} data={filmInfo} URL={URL} setTrailerURL={getTrailerURL}/>
+            <FullDescription dispatch={dispatch} data={filmInfo} videoIdForYoutube={videoIdForYoutube} setTrailerURL={getTrailerURL}/>
         </div>
     );
 }

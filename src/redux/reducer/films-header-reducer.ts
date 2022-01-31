@@ -12,7 +12,7 @@ const initialState : FilmsTypes.InitialFilmsStateType = {
     userFilms: [],
     fullDescr : null,
     actorInfo : null,
-    trailerURL : "",
+    videoIdForYoutube : "",
 }
 
 export const filmsReducer = (state : FilmsTypes.InitialFilmsStateType = initialState,action : FilmsTypes.ActionsType) : FilmsTypes.InitialFilmsStateType => {
@@ -45,7 +45,7 @@ export const filmsReducer = (state : FilmsTypes.InitialFilmsStateType = initialS
         case FilmsTypes.FilmsActionTypes.SET_TRAILER_URL :
             return {
                 ...state,
-                trailerURL : action.trailerURL
+                videoIdForYoutube : action.videoIdForYoutube
             }
         default: return state
     }
@@ -76,6 +76,5 @@ export const getActorInfo = (id: string | undefined) : ThunkType => async (dispa
 
 export const getTrailerURL = (id: string | undefined) : ThunkType => async (dispatch) => {
     const response = await filmsAPI.getTrailerURL(id);
-    debugger
-    dispatch(setTrailerUrl(response.videoUrl))
+    dispatch(setTrailerUrl(response.videoId))
 }

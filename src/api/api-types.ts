@@ -12,6 +12,7 @@ export interface GetStartFilmsItemType {
 
 export interface GetTrailerUrl {
     videoUrl : string
+    videoId : string
 }
 
 export interface GetStartFilmsResponseType {

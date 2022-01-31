@@ -11,7 +11,7 @@ import "./full-description.scss"
 
 interface GetFullDescriptionPropsT {
     data: GetFullDescriptionResponseType | null
-    URL: string
+    videoIdForYoutube: string
     setTrailerURL: (id: string | undefined) => ThunkType
     dispatch: Dispatch<ThunkType>
 }
@@ -61,11 +61,11 @@ const FullDescription: React.FC<GetFullDescriptionPropsT> = (props) => {
                         {getActorLinkArr}
                     </div>
                     <div className="full-description__trailer-btn">
-                        <button onClick={() => getTrailerURL()}>Посмотреть Трейлер</button>
+                        <button className="button upgrade-button" onClick={getTrailerURL}>Посмотреть Трейлер</button>
                     </div>
                 </div>
             </div>
-            {visible ? <ModalWindowWithVideo URL={props.URL} closeModal={setVisible} /> : null}
+            {visible ? <ModalWindowWithVideo videoIdForYoutube={props.videoIdForYoutube} closeModal={setVisible} /> : null}
         </div>
     )
 }

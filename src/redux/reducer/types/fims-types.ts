@@ -16,7 +16,7 @@ export interface InitialFilmsStateType {
     userFilms: Array<GetStartFilmsItemType>
     fullDescr : GetFullDescriptionResponseType | null
     actorInfo : GetActorInfoResponseType | null,
-    trailerURL : string
+    videoIdForYoutube : string
 }
 
 export interface SetUserInputType {
@@ -46,7 +46,7 @@ export interface SetActorInfo {
 
 export interface SetTrailerURL {
     type: FilmsActionTypes.SET_TRAILER_URL,
-    trailerURL : string
+    videoIdForYoutube : string
 }
 
 export type ActionsType = SetUserInputType | SetStartFilms | SetUserFilms | SetFullDescription | SetActorInfo | SetTrailerURL
