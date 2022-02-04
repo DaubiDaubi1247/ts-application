@@ -45,3 +45,22 @@ export const setTrailerUrl = (videoIdForYoutube: string) : SetTrailerURL => {
         videoIdForYoutube
     }
 }
+
+export const nullingFullDescr = () : FilmsTypes.NullingFullDescr => {
+    return {
+        type : FilmsTypes.FilmsActionTypes.NULLING_FULL_DESCR
+    }
+}
+
+
+export const nullingActorInfo = () : FilmsTypes.NullingActorInfo => {
+    return {
+        type : FilmsTypes.FilmsActionTypes.NULLING_ACTOR_INFO
+    }
+}
+
+export const nullingVideoForYoutube = () : FilmsTypes.NullingVideoForYoutube => {
+    return {
+        type : FilmsTypes.FilmsActionTypes.NULLING_VIDEO_FOR_YOUTUBE
+    }
+}

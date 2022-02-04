@@ -5,6 +5,7 @@ import { getActorInfo } from "../../redux/reducer/films-header-reducer";
 import {GetActorInfoResponseType} from "../../api/api-types"
 import { AppStateType } from "../../redux/store";
 import ActorFullInfo from "./actor-full-desc/ActorFullDesc";
+import { nullingActorInfo } from "../../redux/reducer/actions/films-actions";
 
 const ActorsInfoContainer: React.FC= () => {
     const actorInfo : GetActorInfoResponseType | null= useSelector((state: AppStateType) => state.films.actorInfo)
@@ -12,6 +13,7 @@ const ActorsInfoContainer: React.FC= () => {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(getActorInfo(id))  
+        return () => {dispatch(nullingActorInfo())}
     },[])
     return (
         <div className="full-description">

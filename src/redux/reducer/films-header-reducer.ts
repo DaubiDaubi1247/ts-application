@@ -47,6 +47,21 @@ export const filmsReducer = (state : FilmsTypes.InitialFilmsStateType = initialS
                 ...state,
                 videoIdForYoutube : action.videoIdForYoutube
             }
+        case FilmsTypes.FilmsActionTypes.NULLING_FULL_DESCR:
+            return {
+                ...state,
+                fullDescr : null
+            }
+        case FilmsTypes.FilmsActionTypes.NULLING_ACTOR_INFO :
+            return {
+                ...state,
+                actorInfo : null
+            }
+        case FilmsTypes.FilmsActionTypes.NULLING_VIDEO_FOR_YOUTUBE:
+            return {
+                ...state,
+                videoIdForYoutube:""
+            }
         default: return state
     }
 }
@@ -66,11 +81,13 @@ export const getUserFilms = (filmsName: string) : ThunkType => async (dispatch) 
 
 export const getFullDescription = (id: string | undefined): ThunkType => async (dispatch) => {
     const response = await filmsAPI.getFullDescription(id);
+    dispatch(setLoading(false))
     dispatch(setFullDescription(response))
 }
 
 export const getActorInfo = (id: string | undefined) : ThunkType => async (dispatch) => {
     const response = await filmsAPI.getActorInfo(id);
+    dispatch(setLoading(false))
     dispatch(setActorInfo(response))
 }
 

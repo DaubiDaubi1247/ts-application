@@ -14,6 +14,7 @@ interface GetFullDescriptionPropsT {
     videoIdForYoutube: string
     setTrailerURL: (id: string | undefined) => ThunkType
     dispatch: Dispatch<ThunkType>
+    isLoading: boolean
 }
 
 const FullDescription: React.FC<GetFullDescriptionPropsT> = (props) => {
@@ -33,7 +34,7 @@ const FullDescription: React.FC<GetFullDescriptionPropsT> = (props) => {
     return (
         <div className="full-description__wrapper">
             <div className="full-description__name">
-                <span className="full-description__item">
+                <span >
                     {props.data.fullTitle || props.data.title}
                 </span>
             </div>
@@ -43,16 +44,18 @@ const FullDescription: React.FC<GetFullDescriptionPropsT> = (props) => {
                 </div>
                 <div className="full-description__text-description">
                     <span className="description-title">
-                        <span className="full-description__item">Дата Релиза</span> : {date.toLocaleDateString()}
+                        <span className="full-description__item">Дата Релиза : </span><span className="full-description__item-text">{date.toLocaleDateString()}</span>
                     </span>
                     <span className="full-description__imdbRating description-title">
-                        <span className="full-description__item">Рейтинг на IMDB</span> : {props.data.imDbRating}
+                        <span className="full-description__item">Рейтинг на IMDB : </span><span className="full-description__item-text">{props.data.imDbRating}</span>
                     </span>
                     <span className="full-description__mcRating description-title">
-                        <span className="full-description__item">Рейтинг на MetaCritic</span> : {props.data.metacriticRating}
+                        <span className="full-description__item">Рейтинг на MetaCritic : </span><span className="full-description__item-text">{props.data.metacriticRating}</span>
                     </span>
                     <span className="full-description__descr description-title">
-                        <span className="full-description__item">Описание</span> : {props.data.plotLocal?.length ? props.data.plotLocal : props.data.plot}
+                        <span className="full-description__item">Описание : </span>
+                        <span className="full-description__item-text">{props.data.plotLocal?.length ? props.data.plotLocal : props.data.plot}
+                        </span>
                     </span>
                     <div className="full-description__navLinks full-description__item">
                         <span >
@@ -65,7 +68,7 @@ const FullDescription: React.FC<GetFullDescriptionPropsT> = (props) => {
                     </div>
                 </div>
             </div>
-            {visible ? <ModalWindowWithVideo videoIdForYoutube={props.videoIdForYoutube} closeModal={setVisible} /> : null}
+            {visible ? <ModalWindowWithVideo videoIdForYoutube={props.videoIdForYoutube} closeModal={setVisible} isLoading={props.isLoading}/> : null}
         </div>
     )
 }

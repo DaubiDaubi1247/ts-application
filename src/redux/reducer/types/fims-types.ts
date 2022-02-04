@@ -8,6 +8,9 @@ export enum FilmsActionTypes {
     SET_FULL_DESCRIPTION = "SET_FULL_DESCRIPTION",
     SET_ACTOR_INFO = "SET_ACTOR_INFO",
     SET_TRAILER_URL = "SET_TRAILER_URL",
+    NULLING_FULL_DESCR = "NULLING_FULL_DESCR",
+    NULLING_ACTOR_INFO = "NULLING_ACTOR_INFO",
+    NULLING_VIDEO_FOR_YOUTUBE = "NULLING_VIDEO_FOR_YOUTUBE",
 }
 
 export interface InitialFilmsStateType {
@@ -49,4 +52,15 @@ export interface SetTrailerURL {
     videoIdForYoutube : string
 }
 
-export type ActionsType = SetUserInputType | SetStartFilms | SetUserFilms | SetFullDescription | SetActorInfo | SetTrailerURL
+export interface NullingFullDescr {
+    type: FilmsActionTypes.NULLING_FULL_DESCR,
+}
+export interface NullingActorInfo {
+    type: FilmsActionTypes.NULLING_ACTOR_INFO
+}
+
+export interface NullingVideoForYoutube {
+    type: FilmsActionTypes.NULLING_VIDEO_FOR_YOUTUBE
+}
+
+export type ActionsType = SetUserInputType | SetStartFilms | SetUserFilms | SetFullDescription | SetActorInfo | SetTrailerURL | NullingFullDescr | NullingActorInfo | NullingVideoForYoutube

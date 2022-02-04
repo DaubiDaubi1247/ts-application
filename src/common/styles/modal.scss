@@ -26,3 +26,27 @@
         right: -25px;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .modal {
+        &__video {
+            iframe {
+                width: 500px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 554px) {
+    .modal {
+        &__video {
+            iframe {
+                width: 300px;
+            }
+        }
+        &__close-btn {
+            right: 0;
+            top: -25px;
+        }
+    }
+}

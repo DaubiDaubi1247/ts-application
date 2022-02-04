@@ -13,6 +13,7 @@ export interface HeaderInputProps {
 const HeaderInput: React.FC<HeaderInputProps> = (props) => {
     const [userInput, setUserInput] = useState<string>("");
     const [redirect, setRedirect] = useState(false);
+    const [inputMode, setInputMode] = useState(false);
     const dispatch = useDispatch()
     const submitUserInput = (): void => {
         dispatch(getUserFilms(userInput))
@@ -25,8 +26,9 @@ const HeaderInput: React.FC<HeaderInputProps> = (props) => {
     })
     return (
         <div className="header-input">
-            <form action="" className="header-input__form">
-                <input className="header-input__input" type="text" onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUserInput(e.target.value)} value={userInput} placeholder="Фильм, сериал, персонаж" />
+            <form action="" className={!inputMode ? "header-input__form" : "header-input__form onInputMode"}>
+                <input className="header-input__input" type="text" onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUserInput(e.target.value)} onFocus={() => setInputMode(true)}
+                onBlur={() => setInputMode(false)}value={userInput} placeholder="Фильм, сериал, персонаж" />
 
                 <button type="button" className="header-input__search-button" onClick={submitUserInput}>
                     <FontAwesomeIcon icon={faSearch} />

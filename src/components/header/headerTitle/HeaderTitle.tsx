@@ -6,7 +6,7 @@ interface HeaderTitleProps {
 }
 const HeaderTitle : React.FC<HeaderTitleProps>  = (props) => {
     return (
-        <div>
+        <div className="header__name">
             <NavLink to='/'>{props.title}</NavLink>
         </div>
     );

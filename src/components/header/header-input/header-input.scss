@@ -1,20 +1,23 @@
 $inputBackground: #E8E8E8;
 .header-input {
-    margin-left: auto;
-    margin-right: 30px;
+    margin-right: auto;
+    margin-left: 30px;
     &__form {
         display: flex;
-        width: 300px;
+        width: 250px;
         justify-content: center;
+        background-color: $inputBackground;
+        @media screen and (max-width: 992px) {
+            width: 200px;
+        }
     }
     &__input {
         border-radius: 6px 0 0 6px;
         padding: 5px 10px 5px 10px;
         border: none;
         background-color: $inputBackground;
-        max-width: 200px;
+        width: 100%;
         flex: 1 0 95%;
-        align-self: flex-start;
         height: 25px;
         &:focus-visible {
             outline: none;
@@ -26,5 +29,25 @@ $inputBackground: #E8E8E8;
         border: none !important;
         cursor: pointer;
         flex: 0 1 5%
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header-input {
+        &__form {
+            width: 200px;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .header-input {
+        margin-left: 20px;
+        &__form {
+            width: 70px;
+        }
+        .onInputMode {
+            width: 170px;
+        }
     }
 }

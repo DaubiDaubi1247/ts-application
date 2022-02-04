@@ -15,6 +15,7 @@ const ImgWithPreloader: React.FC<ImgPropsT> = (props) => {
         });
     },[]);
 
+    
     return url ? <img src={url} alt="" /> : <Preloader/>;
 }
 
