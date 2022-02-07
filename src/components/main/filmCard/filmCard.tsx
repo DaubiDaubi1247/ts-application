@@ -18,10 +18,12 @@ const FilmCard: React.FC<GetStartFilmsItemType> = (props) => {
                     </NavLink>
                 </div>
                 <div className="film-card__description">
-                    {props.crew ? <span className="film-card__authors film-card__desc-section"><span className="film-card__desc-title">Авторы</span> : {props.crew}</span>
+                    {props.crew ? <span className="film-card__authors film-card__desc-section">
+                        <span className="film-card__desc-title">Авторы</span> : {props.crew}</span>
                         :
                         null}
-                    {props.imDbRating ? <span className="film-card__rating film-card__desc-section"><span className="film-card__desc-title">Рейтинг на IMDB</span> : {props.imDbRating}</span>
+                    {props.imDbRating ? <span className="film-card__rating film-card__desc-section">
+                        <span className="film-card__desc-title">Рейтинг на IMDB</span> : {props.imDbRating}</span>
                         :
                         null}
                     {props.rankUpDown ? <span className="film-card__rating film-card__desc-section"><span className="film-card__desc-title">Поднялся/опустился в рейтинге IMDB</span> : {props.rankUpDown}</span>

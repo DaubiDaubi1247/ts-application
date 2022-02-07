@@ -8,7 +8,7 @@ const UserFilmContainer = () => {
     const userFilms: Array<GetStartFilmsItemType> = useSelector((state: AppStateType) => state.films.userFilms)
 
     return (
-        <div>
+        <div className="">
             <UserFilms userFilms={userFilms}/>
         </div>
     );

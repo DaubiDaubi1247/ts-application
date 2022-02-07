@@ -1,4 +1,9 @@
 .films {
+    &__wrapper {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+    }
     &__start-films {
         display: grid;
     }

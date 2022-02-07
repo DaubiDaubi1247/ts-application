@@ -9,7 +9,7 @@ interface UserFilmsT {
 const UserFilms: React.FC<UserFilmsT> = (props) => {
     const userFilmsArr: VisibleCardsType = props.userFilms.map(el => <FilmCard {...el} />)
     return (  
-        <div>
+        <div className="films__wrapper">
             {userFilmsArr}
         </div>
     );
